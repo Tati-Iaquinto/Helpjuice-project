@@ -40,6 +40,10 @@ li {
   
 }
 
+a {
+  cursor: pointer;
+}
+
 a, span {
   text-decoration: none;
   color: darkgray;
@@ -76,21 +80,49 @@ main {
   align-items: center;
 }
 section{
-  width: 70%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.box {
+.toolbox {
+  width: 100%;
+  height: 40px;
+  margin: 40px 0;
+  border: solid 1px lightgrey;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.greenbox {
+  width: 20px;
+  height: 25px;
+  background-color: #bfe9db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #468966;
+  font-weight: 700;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.toolboxLeft, .toolboxRight {
+  display: flex;
+  align-items: center;
+}
+
+.toolboxLeft li:not(:last-child) {
+  padding-right: 10px;
+  border-right: solid 1px darkgray;
 }
 
 .textDiv {
   width: 100%;
 }
-
 
 .title {
   width: fit-content;
@@ -108,7 +140,7 @@ h3 {
 }
 
 .inputSection {
-  width: 70%;
+  width: 60%;
   margin-top: 100px;
 }
 
