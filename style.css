@@ -1,4 +1,5 @@
 * {
+  /* width: 100vw; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,6 +7,9 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+ body{
+  width: 100vw;
+}
 
 nav{
   width: 100vw;
@@ -16,29 +20,52 @@ nav{
   
 }
 
-ul{
-  width: 100%;
+.navLeft, .navRight {
   display: flex;
-  font-size: 14px;
   align-items: center;
+}
 
-  @media (min-width: 1024px) {
-    font-size: 16px;
-  }
+.navLeft ul {
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+li {
+  max-width: 230px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
   
 }
 
 a, span {
-  width: 150px;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
   color: darkgray;
-  
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+ a span{
+  display: flex; 
+  align-items: center;
+  margin-right: 8px;
+
+}
+
+.selected {
+  font-weight: bold;
+  color: #4e709d;	
+}
+
+.navRight ul {
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 main {
@@ -75,7 +102,6 @@ section{
 }
 
 h3 {
-
   font-size: 20px;
   font-weight: normal;
   color: #787878;
@@ -91,8 +117,8 @@ input {
   width: 100%;
   height: fit-content;
   border: none;
-  font-size: 44px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: normal;
 }
 
 input:focus {

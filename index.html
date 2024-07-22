@@ -14,49 +14,58 @@
   <body>
     <header>
       <nav>
-        <ul>
-          <li>
-            <a href="">
-              <span class="material-symbols-outlined">
-                double_arrow
-                </span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <span class="material-symbols-outlined" style="margin-right: 8px;">
-                import_contacts
-              </span>
-              Main
-            </a>
-          </li>
-          <li>
-            <a href="">/ Getting started</a>
-          </li>
-          <li>
-            <a href="">/ Front-end developer test project</a>
-          </li>
-        </ul>
+        <div class="navLeft">
+          <a href="" style="margin-right: 8px;">
+            <span class="material-symbols-outlined">
+              double_arrow
+            </span>
+          </a>
+  
+          <ul>
+            <li>
+              <a href="">
+                <span>
+                  <span class="material-symbols-outlined" style="margin-right: 8px;">
+                    import_contacts
+                  </span>
+                  Main
+                </span> 
+              </a>
+            </li>
+            <li>
+              <a href="">/ Getting started</a>
+            </li>
+            <li>
+              <a href="">/ Front-end developer test project</a>
+            </li>
+          </ul>
+        </div>
 
-        <ul style="justify-content: flex-end;">
-          <li>
-            <a href="">
-              <span class="material-symbols-outlined">
-                lock_open
+        <div class="navRight">
+          <ul>
+            <li>
+              <a href="">
+                <span>
+                  <span class="material-symbols-outlined">
+                    lock_open
+                    </span>
+                  Editing
                 </span>
-              Editing
-            </a>
-          </li>
-          <span style="margin: 0 8px">|</span>
-          <li>
-            <a href="">
-              Publish space 
-              <span class="material-symbols-outlined">
-                keyboard_arrow_down
+              </a>
+            </li>
+            <span style="margin: 0 8px">|</span>
+            <li>
+              <a href="" >
+                <span class="selected">
+                  Publish space 
+                  <span class="material-symbols-outlined" style="color: #4e709d">
+                  keyboard_arrow_down
+                  </span>
                 </span>
-            </a>
-          </li>
-        </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -73,7 +82,7 @@
         </div>
       </section>
       <section class="inputSection">
-        <input type="text" placeholder="Heading 1">
+        <input type="text" placeholder="Type / for blocks, @ to link docs or people">
       </section>
     </main>
 
