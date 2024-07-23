@@ -92,7 +92,7 @@
               <span class="greenbox">P</span>
             </li>
             <li>
-              <span class="material-symbols-outlined">
+              <span class="material-symbols-outlined" style="margin-right: 5px;">
                 schedule
                 </span>
                 0 min
@@ -101,7 +101,7 @@
               <img src="/rabbit.png" alt="profile image" style="width: 25px; height: 25px;">
             </li>
             <li>
-              <span class="material-symbols-outlined">
+              <span class="material-symbols-outlined" style="margin-right: 5px;">
                 call_received
               </span>
               0
@@ -140,21 +140,20 @@
         <div class="popupStyle" id="popupStyle">
           <h4>Add blocks</h4>
           <h5>Keep typing to filter or escape to exit</h5>
-          <h6>Filtering keyword</h6>
+          <h6>Filtering keyword <span class="keywordStyle">1</span></h6>
           <button onclick="applyStyle(event, '/1')" id="h1Style">
-            <span class="material-symbols-outlined">
-              title
-            </span>
-            Heading 1
-            <span>
-              Shortcut type: # + space</span>
+            <span class="material-symbols-outlined" style="font-size: 40px;"> title</span>
+            <div>
+              <span class="titleSpan">Heading 1</span>
+              <span class="subtitleSpan">Shortcut type: # + space</span>
+            </div>
           </button>
           <button onclick="applyStyle(event, '')">
-            <span class="material-symbols-outlined">
-              title
-            </span>
-            Expandable Heading 1
-            <span>Shortcut type: >># + space</span>
+            <span class="material-symbols-outlined" style="font-size: 40px;"> title</span>
+            <div>
+              <span class="titleSpan">Expandable Heading 1</span>
+              <span class="subtitleSpan">Shortcut type: >># + space</span>
+            </div>
           </button>
         </div>
       </section>

@@ -85,7 +85,7 @@ section{
   width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .toolbox {
@@ -124,6 +124,7 @@ section{
 .toolboxLeft, .toolboxRight {
   display: flex;
   align-items: center;
+  color: darkgray;
 }
 
 .toolboxLeft li:not(:last-child) {
@@ -143,21 +144,17 @@ h1 {
   line-height: 70px;
 }
 
+hr {
+  height: 1px;
+  background-color: #E8E8E8	;
+  margin: 10px 0 20px;
+}
+
 p {
   font-size: 20px;
   font-weight: normal;
   color: #787878;
 }
-
-
-/* input {
-  margin: 20px 0;
-  width: 100%;
-  height: fit-content;
-  border: none;
-  font-size: 20px;
-  font-weight: normal;
-} */
 
 textarea {
   margin: 20px 0;
@@ -176,15 +173,16 @@ textarea:focus {
 .popupStyle {
   width: 300px;
   height: 350px;
-  padding: 10px 8px;
+  padding: 20px 10px;
   border: solid 1px lightgray;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .popupStyle h5 {
   padding: 5px 0;
   font-size: 16px;
-  color: #787878;
+  color: #A9A9A9;
   font-weight: normal;
 }
 
@@ -192,12 +190,28 @@ textarea:focus {
   padding-bottom: 18px;
   font-size: 16px;
   font-weight: normal;
+  color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.keywordStyle {
+  width: 15px;
+  height: 25px;
+  background-color: #1e549f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 200;
+  border-radius: 3px;
+  margin-left: 10px;
 }
 
 .popupStyle button {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   background-color: white;
   border: none;
   cursor: pointer;
@@ -206,7 +220,20 @@ textarea:focus {
   padding: 8px 0;
 }
 
-.popupStyle button span {
+.popupStyle button div {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.titleSpan {
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subtitleSpan {
   font-weight: normal;
 }
 
@@ -216,166 +243,3 @@ textarea:focus {
 
 
 
-
-
-
-
-/* * {
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
- body{
-  width: 100vw;
-}
-
-nav{
-  width: 100vw;
-  padding: 20px 18PX;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-}
-
-.navLeft, .navRight {
-  display: flex;
-  align-items: center;
-}
-
-.navLeft ul {
-  width: 40vw;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-li {
-  max-width: 230px;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  
-}
-
-a {
-  cursor: pointer;
-}
-
-a, span {
-  text-decoration: none;
-  color: darkgray;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
- a span{
-  display: flex; 
-  align-items: center;
-  margin-right: 8px;
-
-}
-
-.selected {
-  font-weight: bold;
-  color: #4e709d;	
-}
-
-.navRight ul {
-  width: 25vw;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-main {
-  width: 100%;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-section{
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.toolbox {
-  width: 100%;
-  height: 40px;
-  margin: 40px 0;
-  border: solid 1px lightgrey;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-.greenbox {
-  width: 20px;
-  height: 25px;
-  background-color: #bfe9db;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #468966;
-  font-weight: 700;
-  border-radius: 3px;
-  margin-right: 10px;
-}
-
-.toolboxLeft, .toolboxRight {
-  display: flex;
-  align-items: center;
-}
-
-.toolboxLeft li:not(:last-child) {
-  padding-right: 10px;
-  border-right: solid 1px darkgray;
-}
-
-.textDiv {
-  width: 100%;
-}
-
-.title {
-  width: fit-content;
-  font-size: 44px;
-  font-weight: bold;
-  text-align: center;
-  border-bottom: solid 1px lightgray;
-  line-height: 70px;
-}
-
-p {
-  font-size: 20px;
-  font-weight: normal;
-  color: #787878;
-}
-
-.inputSection {
-  width: 60%;
-  margin-top: 100px;
-}
-
-input {
-  margin: 20px 0;
-  width: 100%;
-  height: fit-content;
-  border: none;
-  font-size: 20px;
-  font-weight: normal;
-}
-
-input:focus {
-  outline: none;
-}
- */

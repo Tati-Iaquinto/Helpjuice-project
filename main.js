@@ -81,21 +81,21 @@ document.addEventListener("DOMContentLoaded", function() {
   function transformToH1() {
       const textArea = document.getElementById('inputText');
       let text = textArea.value.replace('/1', '').trim();
-      const editableH1 = document.createElement('h1');
-      editableH1.innerText = text;
-      editableH1.contentEditable = "true";
+      const newH1 = document.createElement('h1');
+      newH1.innerText = text;
+      newH1.contentEditable = "true";
       //teste mudando a classe
-      editableH1.className = 'title'
+      newH1.className = 'title'
       // editableH1.className = 'editable';
-      editableH1.onblur = saveEditableH1; // Salva o texto ao sair do modo de edição (verificar necessidade)
-      editableH1.addEventListener('keydown', function(event) {
+      newH1.onblur = saveEditableH1; // Salva o texto ao sair do modo de edição (verificar necessidade)
+      newH1.addEventListener('keydown', function(event) {
           if (event.key === 'Enter') {
               event.preventDefault();
-              editableH1.blur(); // Sai do modo de edição ao apertar Enter
+              newH1.blur(); // Sai do modo de edição ao apertar Enter
           }
       });
-      document.getElementById('newDiv').appendChild(editableH1);
-      editableH1.focus();
+      document.getElementById('newDiv').appendChild(newH1);
+      newH1.focus();
       // document.execCommand('selectAll', false, null);
       textArea.value = ''; // Limpa o textarea
       textArea.style.display = 'none'; // Esconde o textarea
@@ -103,14 +103,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Função para salvar o texto editado no H1 e restaurar o textarea
   function saveEditableH1(event) {
-      const editableH1 = event.target;
-      const newText = editableH1.innerText;
+      const newH1 = event.target;
+      const newText = newH1.innerText;
       const savedTextDiv = document.createElement('div');
       savedTextDiv.innerHTML = `<h1>${newText}</h1>`;
       document.getElementById('newDiv').appendChild(savedTextDiv);
       document.getElementById('inputText').style.display = 'block'; // Mostra novamente o textarea
       document.getElementById('inputText').focus(); // Foca no textarea
-      editableH1.remove(); // Remove o H1 editável
+      newH1.remove(); // Remove o H1 editável
   }
 
 });
