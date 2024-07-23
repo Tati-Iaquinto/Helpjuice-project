@@ -9,6 +9,7 @@
 
  body{
   width: 100vw;
+  padding-bottom: 600px;
 }
 
 nav{
@@ -139,7 +140,6 @@ h1 {
   font-size: 44px;
   font-weight: bold;
   text-align: center;
-  border-bottom: solid 1px lightgray;
   line-height: 70px;
 }
 
@@ -150,14 +150,14 @@ p {
 }
 
 
-input {
+/* input {
   margin: 20px 0;
   width: 100%;
   height: fit-content;
   border: none;
   font-size: 20px;
   font-weight: normal;
-}
+} */
 
 textarea {
   margin: 20px 0;
@@ -168,7 +168,7 @@ textarea {
   font-weight: normal;
 }
 
-input:focus {
+textarea:focus {
   outline: none;
 }
 
