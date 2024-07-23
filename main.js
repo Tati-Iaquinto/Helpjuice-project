@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   });
   document.addEventListener('keydown', function(event) {
-    //Checks if the pressed key's value is 'Enter'
+    //Checks if the pressed key is 'Enter'
       if (event.key === 'Enter') {
           const popup = document.getElementById('popupStyle');
           if (popup) {
@@ -40,17 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   });
 
-  //Shows popup menu when the user types '/'
-  function showPopup(textarea) {
-      let popup = document.getElementById('popupStyle');
-      if (!popup) {
-          popup = document.createElement('div');
-          popup.className = 'popupStyle';
-          textarea.parentNode.insertBefore(popup, textarea.nextSibling);
-
-      }
-      popup.style.display = 'block';
-  }
 
   // Saves the text inside textarea as either paragraph or h1
   function submitText() {
@@ -66,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
       addTextToNewDiv(textObj); // Fills a new div with the text
   }
 
-  //Sorts text as a paragraph or h1 to the new div
+  //Adds text as a paragraph or h1 into the new div
   function addTextToNewDiv(textObj) {
       const newTextDiv = document.getElementById('newDiv');
       const element = document.createElement(textObj.content.startsWith('/1') ? 'h1' : 'p');
@@ -111,3 +100,15 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 });
+
+//Shows popup menu when the user types '/'
+function showPopup(textarea) {
+    let popup = document.getElementById('popupStyle');
+    if (!popup) {
+        popup = document.createElement('div');
+        popup.className = 'popupStyle';
+        textarea.parentNode.insertBefore(popup, textarea.nextSibling);
+
+    }
+    popup.style.display = 'block';
+}

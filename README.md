@@ -9,17 +9,15 @@ This project is a simple web page that allows users to create H1 headers and par
 - Allows for creating standard paragraphs by default.
 - Hides the style selection popup when clicking outside or pressing "Enter".
 
-## Installation
+## Setup
 
-1. Clone the repository:
+1.Clone the repository with the following link:
     ```sh
-    git clone https://github.com/your-username/notion-like-h1-editor.git
+    git clone https://github.com/Tati-Iaquinto/Helpjuice-project.git
     ```
-2. Navigate to the project directory:
-    ```sh
-    cd notion-like-h1-editor
-    ```
-3. Open `index.html` in your web browser to view the application.
+2. Once the files are on your machine, open the Helpjuice-project folder in your code editor.
+
+3. Run the project with an extension like Live Server.
 
 
 ## How to Use
