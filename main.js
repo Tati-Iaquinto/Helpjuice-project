@@ -2,45 +2,45 @@ document.addEventListener("DOMContentLoaded", function() {
   const inputText = document.getElementById('inputText');
   let createTag = '';
 
-  // Adiciona evento para tratar 'Enter', '/', e '1'
+  //Adds an event to manage 'Enter, '/' and '1'
   inputText.addEventListener('keydown', function(event) {
-      // Ao apertar 'Enter', verifica o modo de comando e realiza a ação apropriada
+    //'Enter' key checks if the new tag should be an H1 or P type
       if (event.key === 'Enter') {
           event.preventDefault();
           if (createTag === 'h1') {
-              transformToH1(); // Transforma o textarea em um H1 editável
+              transformToH1(); 
           } else {
-              submitText(); // Salva o texto como parágrafo ou H1
+              submitText(); 
           }
       } else if (event.key === '/') {
-          showPopup(inputText); // Exibe o menu de estilos
+          showPopup(inputText); // '/' key opens the popup menu
       } else if (event.key === '1' && inputText.value.endsWith('/')) {
-          createTag = 'h1'; // Define o modo de comando para H1
+          createTag = 'h1';
       } else {
-          createTag = ''; // Reseta o modo de comando para outros inputs
+          createTag = ''; // Resets createTag
       }
   });
 
-  // Evento global para cliques fora do menu de estilo para escondê-lo
+  //Global event to close the menu whenever the user clicks outside of it
   document.addEventListener('click', function(event) {
-      // Verifica se o clique foi fora do popup ou do textarea
+    //Verifies if the click was outside the popup menu or the text area
       const popup = document.getElementById('popupStyle');
       const inputText = document.getElementById('inputText');
       if (popup && !popup.contains(event.target) && !inputText.contains(event.target)) {
-          popup.style.display = 'none'; // Esconde o menu se clicar fora
+          popup.style.display = 'none'; 
       }
   });
   document.addEventListener('keydown', function(event) {
-      // Verifica se a tecla pressionada é 'Enter'
+    //Checks if the pressed key's value is 'Enter'
       if (event.key === 'Enter') {
           const popup = document.getElementById('popupStyle');
           if (popup) {
-              popup.style.display = 'none'; // Esconde o menu ao pressionar Enter
+              popup.style.display = 'none';
           }
       }
   });
 
-  // Função para exibir o menu de estilo ao digitar '/'
+  //Shows popup menu when the user types '/'
   function showPopup(textarea) {
       let popup = document.getElementById('popupStyle');
       if (!popup) {
@@ -52,21 +52,21 @@ document.addEventListener("DOMContentLoaded", function() {
       popup.style.display = 'block';
   }
 
-  // Função para salvar o texto do textarea como parágrafo ou H1
+  // Saves the text inside textarea as either paragraph or h1
   function submitText() {
       const input = document.getElementById('inputText').value;
-      if (input.trim() === '') return; // Ignora se o input estiver vazio
+      if (input.trim() === '') return; // Ignores an empty string value inside the input
 
       const textObj = {
-          id: Math.random().toString(16).slice(2), // Gera um ID único para o texto
+          id: Math.random().toString(16).slice(2), // Generates an id for each text block
           content: input
       };
 
-      document.getElementById('inputText').value = ''; // Limpa o textarea
-      addTextToNewDiv(textObj); // Adiciona o texto à área de saída
+      document.getElementById('inputText').value = ''; // Cleans text area
+      addTextToNewDiv(textObj); // Fills a new div with the text
   }
 
-  // Função para adicionar o texto como parágrafo ou H1 ao div
+  //Sorts text as a paragraph or h1 to the new div
   function addTextToNewDiv(textObj) {
       const newTextDiv = document.getElementById('newDiv');
       const element = document.createElement(textObj.content.startsWith('/1') ? 'h1' : 'p');
@@ -77,40 +77,37 @@ document.addEventListener("DOMContentLoaded", function() {
       newTextDiv.appendChild(element);
   }
 
-  // Função para transformar o textarea em um H1 editável
+  // Detects if the user typed '/1' command and tranforms the following text into an h1, as well as hides the command when the text is submitted.
   function transformToH1() {
       const textArea = document.getElementById('inputText');
       let text = textArea.value.replace('/1', '').trim();
       const newH1 = document.createElement('h1');
       newH1.innerText = text;
       newH1.contentEditable = "true";
-      //teste mudando a classe
       newH1.className = 'title'
-      // editableH1.className = 'editable';
-      newH1.onblur = saveEditableH1; // Salva o texto ao sair do modo de edição (verificar necessidade)
+      newH1.onblur = saveEditableH1;
       newH1.addEventListener('keydown', function(event) {
           if (event.key === 'Enter') {
               event.preventDefault();
-              newH1.blur(); // Sai do modo de edição ao apertar Enter
+              newH1.blur(); 
           }
       });
       document.getElementById('newDiv').appendChild(newH1);
       newH1.focus();
-      // document.execCommand('selectAll', false, null);
-      textArea.value = ''; // Limpa o textarea
-      textArea.style.display = 'none'; // Esconde o textarea
+      textArea.value = ''; // Cleans text area
+      textArea.style.display = 'none'; // Hides text area
   }
 
-  // Função para salvar o texto editado no H1 e restaurar o textarea
+  // Saves submitted text and creates a new textarea
   function saveEditableH1(event) {
       const newH1 = event.target;
       const newText = newH1.innerText;
       const savedTextDiv = document.createElement('div');
       savedTextDiv.innerHTML = `<h1>${newText}</h1>`;
       document.getElementById('newDiv').appendChild(savedTextDiv);
-      document.getElementById('inputText').style.display = 'block'; // Mostra novamente o textarea
-      document.getElementById('inputText').focus(); // Foca no textarea
-      newH1.remove(); // Remove o H1 editável
+      document.getElementById('inputText').style.display = 'block';
+      document.getElementById('inputText').focus();
+      newH1.remove();
   }
 
 });
